@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">JuanCastrejonAutomotriz</string>
+    <string name="txt_10_percentage">Tasa anual del 10%</string>
+    <string name="txt_15_percentage">Tasa anual del 15%</string>
+    <string name="txt_20_percentage">Tasa anual del 20%</string>
+    <string name="txt_verify">Verificar crédito</string>
+    <string name="txt_corrida">CalcularCorrida</string>
+    <string name="txt_login">LogIn</string>
+    <string name="txt_contact">Contacto</string>
+    <string name="txt_user">Usuario o correo</string>
+    <string name="txt_pass">Contraseña</string>
+    <string name="btn_login">Logearse</string>
+    <string name="btn_register">Registrarse</string>
+    <string name="btn_delete">Eliminar cuenta</string>
+    <string name="txt_ine">INE</string>
+    <string name="txt_comp_domc">Comprobante de domicilio</string>
+    <string name="txt_comp_ing">Comprobante de ingresos</string>
+    <string name="btn_send_credito">Enviar solicitud</string>
+</resources>
