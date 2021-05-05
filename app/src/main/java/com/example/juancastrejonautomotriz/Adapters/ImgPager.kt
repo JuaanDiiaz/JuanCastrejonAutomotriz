@@ -24,6 +24,7 @@ class ImgPagerAdapter(var context: Context, var images:ArrayList<String>):PagerA
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = layoutInflater.inflate(R.layout.item_img,container,false)
         val imageView = view.findViewById<View>(R.id.imageViewVehicle) as ImageView
+        container.addView(view,0)
         Picasso.get().load(images[position]).fit()
             .into(imageView)
         imageView.setOnClickListener{

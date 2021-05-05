@@ -7,12 +7,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
 class PermissionAplication(val context: Context) {
-    fun hasPermissions(listPermissions:Array<String>):Boolean{
-
-        for(permission in listPermissions){
-            if(ContextCompat.checkSelfPermission(context,permission)!= PackageManager.PERMISSION_GRANTED){
-                return false
-            }
+    fun hasPermission(permissionName:String):Boolean{
+        if(ContextCompat.checkSelfPermission(context,permissionName)!= PackageManager.PERMISSION_GRANTED){
+            return false
         }
         return true
     }
