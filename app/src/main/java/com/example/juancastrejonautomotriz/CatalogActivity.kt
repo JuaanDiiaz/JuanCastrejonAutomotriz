@@ -17,6 +17,7 @@ import com.example.juancastrejonautomotriz.Adapters.VehiculoaAdapter
 import com.example.juancastrejonautomotriz.Entity.EntityVehiculoBusqueda
 import com.example.juancastrejonautomotriz.Tools.Constants
 import com.example.juancastrejonautomotriz.databinding.ActivityCatalogBinding
+
 import org.json.JSONObject
 
 class CatalogActivity : AppCompatActivity() {
@@ -30,6 +31,7 @@ class CatalogActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCatalogBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setTitle(R.string.txt_catalog)
 
         loadRecycler("")
     }

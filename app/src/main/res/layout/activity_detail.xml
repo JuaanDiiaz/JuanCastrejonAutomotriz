@@ -10,21 +10,21 @@
     android:layout_height="wrap_content"
     tools:context=".DetailActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="351dp"
-        android:layout_height="228dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="372dp"
+            android:layout_height="331dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/custom_layout" />
-    </LinearLayout>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_layout" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textViewVhicle"

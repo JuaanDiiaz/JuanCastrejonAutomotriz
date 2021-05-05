@@ -8,4 +8,10 @@
     <item android:id="@+id/itmContact"
         android:title="@string/txt_contact"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/edit_text_menu"
+        android:title="Busqueda"
+        android:actionLayout="@layout/edit_text_layout"
+        app:showAsAction="ifRoom"
+        />
 </menu>

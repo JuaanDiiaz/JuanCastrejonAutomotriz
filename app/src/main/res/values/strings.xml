@@ -16,4 +16,5 @@
     <string name="txt_comp_domc">Comprobante de domicilio</string>
     <string name="txt_comp_ing">Comprobante de ingresos</string>
     <string name="btn_send_credito">Enviar solicitud</string>
+    <string name="txt_catalog">Catalogo</string>
 </resources>
