@@ -5,13 +5,24 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.example.juancastrejonautomotriz.Adapters.ImgPagerAdapter
 import com.example.juancastrejonautomotriz.Tools.Constants
 import com.example.juancastrejonautomotriz.Tools.PermissionAplication
 import com.example.juancastrejonautomotriz.databinding.ActivityCreditoBinding
+import com.squareup.picasso.Picasso
+import org.json.JSONObject
 
 class CreditoActivity : AppCompatActivity() {
     private val permissions = PermissionAplication(this)
+    private lateinit var queue: RequestQueue
+    private val url = "http://192.168.100.17:8090/api/Vehiculo"
     lateinit var binding:ActivityCreditoBinding
     private var permissionsOK=false
     private val id_vehicle:Int by lazy {
@@ -26,6 +37,7 @@ class CreditoActivity : AppCompatActivity() {
         binding = ActivityCreditoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        loadImages()
         resumen= intent.getStringExtra(Constants.RES).toString()
         binding.textViewDetalle.text=resumen
         binding.floatingActionButtonINE.setOnClickListener {
@@ -61,6 +73,7 @@ class CreditoActivity : AppCompatActivity() {
         binding.buttonSendCredit.setOnClickListener {
             Toast.makeText(this,"Solicitud enviada, nosotros nos pondremos en contacto con usted",Toast.LENGTH_LONG).show()
         }
+
 
     }
     fun abrePag(){
@@ -107,5 +120,28 @@ class CreditoActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+    fun loadImages(){
+        queue= Volley.newRequestQueue(this)
+        val stringRequest = StringRequest(
+            Request.Method.GET,url+"/$id_vehicle",
+            Response.Listener<String>{ response ->
+                Log.d("UdelP","response is $response")
+                val jsonObject = JSONObject(response)
+                val vehicleArray = jsonObject.getJSONArray("values")
+                for (i in 0 until vehicleArray.length()){
+                    val vehicleObject = vehicleArray.getJSONObject(i)
+                    val imageArray = vehicleObject.getJSONArray("imgns")
+                    for (j in 0 until imageArray.length()){
+                        Picasso.get().load(imageArray.getJSONObject(j).getString("img")).fit()
+                            .into(binding.imageView5)
+                    }
+                }
+            },
+            Response.ErrorListener { error ->
+                Log.d("UdelP","error is $error")
+            }
+        )
+        queue.add(stringRequest)
     }
 }

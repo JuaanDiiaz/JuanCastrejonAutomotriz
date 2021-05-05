@@ -14,6 +14,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="372dp"
             android:layout_height="331dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

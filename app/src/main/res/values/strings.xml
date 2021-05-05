@@ -17,4 +17,5 @@
     <string name="txt_comp_ing">Comprobante de ingresos</string>
     <string name="btn_send_credito">Enviar solicitud</string>
     <string name="txt_catalog">Catalogo</string>
+    <string name="txt_search">Buscar</string>
 </resources>

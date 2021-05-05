@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -34,6 +35,13 @@ class CatalogActivity : AppCompatActivity() {
         supportActionBar?.setTitle(R.string.txt_catalog)
 
         loadRecycler("")
+
+        binding.floatingActionButtonSearch.setOnClickListener {
+            loadRecycler(binding.editTextTextBusqueda.text.toString().trim())
+        }
+        binding.editTextTextBusqueda.addTextChangedListener{
+            loadRecycler(binding.editTextTextBusqueda.text.toString().trim())
+        }
     }
 
     override fun onResume() {
@@ -91,3 +99,4 @@ class CatalogActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 }
+
